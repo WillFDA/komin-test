@@ -112,6 +112,7 @@ header {
 
 h1 {
   font-weight: 600;
+  font-size: 36px;
 }
 
 .header-nav {
@@ -250,4 +251,28 @@ figure:hover h2 {
   color: #667085;
   opacity: 0;
   visibility: hidden;
+}
+
+.h1-edit {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.h1-edit:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: inherit;
+}
+
+.visited {
+  opacity: 0.7;
+}
+
+.visited:hover {
+  opacity: 1;
 }
