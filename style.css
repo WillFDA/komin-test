@@ -106,6 +106,7 @@ header {
 
 .header-title {
   display: flex;
+  align-items: center;
   color: white;
   gap: 10px;
 }
@@ -148,6 +149,7 @@ figure {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 figcaption {
@@ -196,7 +198,7 @@ h3 {
   gap: 10px;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .overlay-description {
@@ -228,6 +230,11 @@ h3 {
 .overlay-timer-box span {
   color: #3d52d5;
   font-size: 10px;
+}
+
+figure:hover {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
 }
 
 figure:hover .overlay {
@@ -275,4 +282,25 @@ figure:hover h2 {
 
 .visited:hover {
   opacity: 1;
+}
+
+#edit-title {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#edit-title:hover {
+  transform: translateY(-6px);
+}
+
+#check-title {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+#cancel-title {
+  width: 24px;
+  height: 24px;
+  color: white;
 }

@@ -14,17 +14,20 @@ editButton.addEventListener("click", function () {
   title.replaceWith(inputElement);
   inputElement.focus();
   inputElement.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      if (inputElement.value.trim() === "") {
-        alert("Le titre ne peut pas être vide");
-        return;
-      }
-      title.textContent = inputElement.value;
-      localStorage.setItem("savedTitle", inputElement.value);
+    const inputContent = inputElement.value.trim();
+    const enterPressed = event.key === "Enter";
+    const escPressed = event.key === "Escape" || event.key === 27;
+
+    if (escPressed) return inputElement.replaceWith(title);
+    if (!enterPressed) return;
+
+    const inputValide = inputContent.length >= 4 && inputContent.length <= 16;
+    if (inputValide) {
+      title.textContent = inputContent;
+      localStorage.setItem("savedTitle", inputContent);
       inputElement.replaceWith(title);
-    }
-    if (event.key === "Escape" || event.key === 27) {
-      inputElement.replaceWith(title);
+    } else {
+      alert("Le titre doit avoir entre 4 et 16 caractères");
     }
   });
 });
