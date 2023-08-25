@@ -21,13 +21,13 @@ editButton.addEventListener("click", function () {
     if (escPressed) return inputElement.replaceWith(title);
     if (!enterPressed) return;
 
-    const inputValide = inputContent.length >= 4 && inputContent.length <= 16;
+    const inputValide = inputContent.length >= 4 && inputContent.length <= 20;
     if (inputValide) {
       title.textContent = inputContent;
       localStorage.setItem("savedTitle", inputContent);
       inputElement.replaceWith(title);
     } else {
-      alert("Le titre doit avoir entre 4 et 16 caractères");
+      alert("Le titre doit avoir entre 4 et 20 caractères");
     }
   });
 });
