@@ -4,7 +4,7 @@ const savedTitle = localStorage.getItem("savedTitle");
 if (savedTitle) {
   title.textContent = savedTitle;
 }
-console.log(title);
+// console.log(title);
 
 editButton.addEventListener("click", function () {
   const inputElement = document.createElement("input");
@@ -21,13 +21,13 @@ editButton.addEventListener("click", function () {
     if (escPressed) return inputElement.replaceWith(title);
     if (!enterPressed) return;
 
-    const inputValide = inputContent.length >= 4 && inputContent.length <= 20;
+    const inputValide = inputContent.length >= 4 && inputContent.length <= 24;
     if (inputValide) {
       title.textContent = inputContent;
       localStorage.setItem("savedTitle", inputContent);
       inputElement.replaceWith(title);
     } else {
-      alert("Le titre doit avoir entre 4 et 20 caractères");
+      alert("Le titre doit avoir entre 4 et 24 caractères");
     }
   });
 });
