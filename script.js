@@ -183,3 +183,13 @@ data.forEach((figureData) => {
 </figure>`;
   section.insertAdjacentHTML("beforeend", figureHTML);
 });
+
+const figureElement = document.querySelectorAll("figure");
+
+figureElement.forEach((figure) => {
+  figure.addEventListener("click", function (e) {
+    if (!e.currentTarget.classList.contains("visited")) {
+      e.currentTarget.classList.add("visited");
+    }
+  });
+});
